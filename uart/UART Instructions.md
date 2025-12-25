@@ -26,6 +26,10 @@ d)
 e)
 ![enablept5](images/selecting_uart_pt4.png)
 
+## FINAL OUTPUT: 
+![finaloutput](images/uart_final_output.png)
+
+
 3. Connect the pins as shown above.
 4. Upload `esp_uart.ino` to the ESP8266.
 5. Compile and run on Raspberry Pi:
