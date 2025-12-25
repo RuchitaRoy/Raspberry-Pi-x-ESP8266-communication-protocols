@@ -10,16 +10,21 @@
 
 ## Steps
 1. Enable UART on the Raspberry Pi (`raspi-config`).
+   
 a) 
-![enablept1](interfacing_options)
+![enablept1](images/interface_options.png)
+
 b)
-![enablept2](enable_uart_pt1)
+![enablept2](images/selecting_uart_pt1.png)
+
 c)
-![enablept3](enable_uart_pt2)
+![enablept3](images/selecting_uart_pt2.png)
+
 d)
-![enablept4](enable_uart_pt3)
+![enablept4](images/selecting_uart_pt3.png)
+
 e)
-![enablept5](enable_uart_pt4)
+![enablept5](images/selecting_uart_pt4.png)
 
 3. Connect the pins as shown above.
 4. Upload `esp_uart.ino` to the ESP8266.
