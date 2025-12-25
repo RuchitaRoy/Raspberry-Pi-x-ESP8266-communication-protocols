@@ -9,7 +9,9 @@
    gcc UdpClient.c -o udp_client
 4. Output should look like :
 ![Upon initialization of server:](images/server_socket.png)
-![Upon initializing client on another terminal](images/server+client socket.png)
+![Upon initialization of server:](images/server+client socket.png)
+
+
 
 
  
