@@ -1,68 +1,86 @@
-# Raspberry-Pi-x-ESP8266-communication-protocols
-This project demonstrates practical communication between a Raspberry Pi and an ESP8266 (NodeMCU) using UDP, UART, and I2C protocols.  It includes embedded C code for the Raspberry Pi (Linux) and Arduino IDE code for ESP8266.
+# Raspberry Pi ↔ ESP8266 Communication Protocols
 
-## Features
-- **UDP Socket Communication**
-  - Raspberry Pi acts as server  
-  - Multiple clients (optional for expansion)  
+## Overview
+This project demonstrates practical communication between a **Raspberry Pi** and an **ESP8266 (NodeMCU)** using three widely used communication protocols:
 
-- **UART Communication**  
-  - Raspberry Pi ↔ ESP8266  
-  - Baudrate: 115200, 8N1  
-  - Bidirectional messaging  
+- **UDP (User Datagram Protocol)**
+- **UART (Universal Asynchronous Receiver–Transmitter)**
+- **I2C (Inter-Integrated Circuit)**
 
-- **I2C Communication**  
-  - Raspberry Pi configured as I2C slave  
-  - ESP8266 as I2C master  
-  - Demonstrates data transfer and acknowledgement  
+The project focuses on protocol configuration, hardware interfacing, and data exchange between an embedded Linux system and a microcontroller.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
+
+## Protocols Implemented
+
+### UDP
+- Network-based communication over Wi-Fi
+- Raspberry Pi operates as a UDP server/client
+- ESP8266 acts as a network endpoint
+
+### UART
+- Point-to-point serial communication
+- Full-duplex data transfer
+- Standard UART configuration (115200, 8N1)
+
+### I2C
+- Bus-based communication
+- ESP8266 configured as **I2C master**
+- Raspberry Pi configured as **I2C slave**
+
+Each protocol is implemented and documented independently.
+
+---
 
 ## Hardware Requirements
-- Raspberry Pi (any model with GPIO)  
-- NodeMCU (ESP8266)  
-- Jumper wires  
-- Optional: Pmod sensors (for later projects)  
+- Raspberry Pi (with GPIO support)
+- ESP8266 (NodeMCU)
+- Jumper wires
+- Common ground between devices
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
-## Raspberry Pi Pin Configuration
+## Software Environment
+- **Raspberry Pi:** Linux OS, GCC compiler
+- **ESP8266:** Arduino IDE
+- **Programming Languages:** C, Arduino (C/C++)
 
-**UART**
-| Raspberry Pi | ESP8266 |
-|--------------|---------|
-| GPIO14 (TXD) | RX      |
-| GPIO15 (RXD) | TX      |
-| GND          | GND     |
+---
 
-**I2C**
-| Raspberry Pi | ESP8266 |
-|--------------|---------|
-| GPIO2 (SDA)  | D2      |
-| GPIO3 (SCL)  | D1      |
-| GND          | GND     |
+## Repository Structure
+```
+.
+├── udp/        # UDP client-server implementation
+├── uart/       # UART serial communication
+├── i2c/        # I2C master-slave communication
+└── README.md
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+```
 
-## Software Setup
+Each protocol folder contains:
+- Source code
+- A dedicated README with setup steps
+- Relevant output images
 
-### Raspberry Pi
-1. Enable **I2C** and **UART** using `sudo raspi-config`  
-2. Compile and run:
-```bash
-gcc UdpServer.c -o udp_server
-./udp_server
+---
 
-gcc UdpClient.c -o udp_client
-./udp_client
 
-gcc pi_uartt.c -o uart_test
-./uart_test
+## Learning Outcomes
+- Understanding differences between network, serial, and bus-based communication
+- Interfacing Raspberry Pi with external microcontrollers
+- Configuring communication protocols at hardware and software levels
+- Structuring and documenting embedded systems projects
 
-gcc pi_i2c.c -o i2c_slave
-./i2c_slave
+---
 
-Note: ESP8266 (NodeMCU) was used as a communication endpoint with Raspberry Pi
-using both UART and I2C protocols. UART was configured at 115200 baud
-for serial data exchange. ESP8266 acted as I2C master while Raspberry Pi
-was configured as slave. Successful bidirectional data transfer was observed.
+## Notes
+- Ensure proper voltage-level compatibility between devices.
+- UART and I2C require correct pin configuration and protocol settings.
+- UDP communication requires both devices to be connected to the same network.
+
+---
+
+## Future Enhancements
+- Sensor integration using UART or I2C
+- Performance comparison between communication protocols
+- Improved error handling and robustness
