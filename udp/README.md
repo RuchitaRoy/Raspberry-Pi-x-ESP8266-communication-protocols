@@ -8,9 +8,9 @@
    gcc UdpServer.c -o udp_server
    gcc UdpClient.c -o udp_client
 4. Output should look like :
-   ##Upon initialization of server:
+   ## Upon initialization of server:
 ![Upon initialization of server:](server_socket.png)
-   ##Upon initialization of client:
+   ## Upon initialization of client:
 ![Upon initialization of client:](server_client_socket.png)
 
 
